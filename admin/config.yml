@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: StefanAlexandru-V/stefanvladu.dev
+  branch: main
+  base_url: https://stefanvladu.dev
+  auth_endpoint: /api/auth
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "data"
+    label: "Site Content"
+    files:
+      - name: "content"
+        label: "All Content"
+        file: "_data/site.json"
+        fields:
+          - label: "Site Info"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Page Title", name: "title", widget: "string" }
+              - label: "Name"
+                name: "name"
+                widget: "object"
+                fields:
+                  - { label: "First Name", name: "first", widget: "string" }
+                  - { label: "Last Name", name: "last", widget: "string" }
+              - { label: "Intro (HTML allowed)", name: "intro", widget: "text" }
+
+          - label: "Jobs"
+            name: "jobs"
+            widget: "list"
+            fields:
+              - { label: "Start Year", name: "dateStart", widget: "string" }
+              - { label: "End Year", name: "dateEnd", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+
+          - label: "Highlights"
+            name: "wins"
+            widget: "list"
+            fields:
+              - { label: "Highlight (bold text)", name: "highlight", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            fields:
+              - { label: "Skill Name", name: "name", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Default", value: "" }
+                  - { label: "Primary (red)", value: "hi" }
+                  - { label: "Infrastructure (blue)", value: "lo" }
+
+          - label: "Contact Links"
+            name: "contact"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Display Value", name: "value", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Open in New Tab", name: "external", widget: "boolean", default: true }

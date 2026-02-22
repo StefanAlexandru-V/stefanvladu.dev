@@ -1,0 +1,110 @@
+{
+  "site": {
+    "title": "Ștefan-Alexandru Vladu",
+    "name": {
+      "first": "Ștefan-Alexandru",
+      "last": "Vladu"
+    },
+    "intro": "I build <strong>security automation platforms</strong> at Devoteam, and run <strong>Divine Solutions</strong> on the side. Before that I was CTO, then CEO, of a U.S. tech company. I've been writing code since 2019 and making decisions since 2023."
+  },
+  "jobs": [
+    {
+      "dateStart": "2023",
+      "dateEnd": "Present",
+      "role": "DevSecOps Engineer & Product Owner",
+      "company": "Devoteam"
+    },
+    {
+      "dateStart": "2024",
+      "dateEnd": "2025",
+      "role": "Chief Executive Officer",
+      "company": "Beep Media · United States"
+    },
+    {
+      "dateStart": "2023",
+      "dateEnd": "2024",
+      "role": "Chief Technology Officer",
+      "company": "Beep Media · United States"
+    },
+    {
+      "dateStart": "2023",
+      "dateEnd": "Present",
+      "role": "Owner",
+      "company": "Divine Solutions"
+    },
+    {
+      "dateStart": "2020",
+      "dateEnd": "2023",
+      "role": "Fullstack Developer",
+      "company": "Neurony · Orange · Hasna"
+    },
+    {
+      "dateStart": "2019",
+      "dateEnd": "2020",
+      "role": "Support Engineer",
+      "company": "Stefanini"
+    }
+  ],
+  "wins": [
+    {
+      "highlight": "40 → 120 live products in 3 months",
+      "description": "as CTO at Beep Media."
+    },
+    {
+      "highlight": "75% faster dev cycles",
+      "description": "through infrastructure redesign and CI/CD improvements."
+    },
+    {
+      "highlight": "90% reduction in operational timelines",
+      "description": "as CEO through automation and process redesign."
+    },
+    {
+      "highlight": "Enterprise DevSecOps platforms",
+      "description": "covering SAST, SCA, IaC and secrets detection across thousands of repos."
+    },
+    {
+      "highlight": "2nd place",
+      "description": "— self-built mental health platform, \"The Caring Bear.\""
+    }
+  ],
+  "skills": [
+    { "name": "Laravel", "category": "hi" },
+    { "name": "PHP", "category": "hi" },
+    { "name": "Node.js", "category": "hi" },
+    { "name": "Python / FastAPI", "category": "hi" },
+    { "name": "Vue.js", "category": "" },
+    { "name": "React / Next.js", "category": "" },
+    { "name": "MySQL · MariaDB", "category": "" },
+    { "name": "Docker · Kubernetes", "category": "lo" },
+    { "name": "AWS · GCP · Azure", "category": "lo" },
+    { "name": "Terraform", "category": "lo" },
+    { "name": "CI/CD", "category": "lo" },
+    { "name": "Checkmarx · GitGuardian", "category": "" },
+    { "name": "ServiceNow", "category": "" },
+    { "name": "SAST · SCA · IaC", "category": "" },
+    { "name": "LangChain · OpenAI", "category": "" },
+    { "name": "LLaMA · Mistral", "category": "" },
+    { "name": "Elasticsearch", "category": "" },
+    { "name": "Grafana · Kibana", "category": "" }
+  ],
+  "contact": [
+    {
+      "label": "Email",
+      "value": "vladustefan01@gmail.com",
+      "url": "mailto:vladustefan01@gmail.com",
+      "external": false
+    },
+    {
+      "label": "LinkedIn",
+      "value": "linkedin.com/in/stefanv23",
+      "url": "https://linkedin.com/in/stefanv23",
+      "external": true
+    },
+    {
+      "label": "GitHub",
+      "value": "github.com/yourhandle",
+      "url": "https://github.com/",
+      "external": true
+    }
+  ]
+}

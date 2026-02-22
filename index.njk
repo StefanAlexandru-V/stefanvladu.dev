@@ -1,0 +1,63 @@
+---
+layout: layout.njk
+---
+<div class="site">
+
+  <header>
+    <h1>{{ site.site.name.first }}<br><em>{{ site.site.name.last }}</em></h1>
+    <p class="intro">
+      {{ site.site.intro | safe }}
+    </p>
+  </header>
+
+  <!-- Career -->
+  <section>
+    <div class="label">Experience</div>
+    <div class="jobs">
+      {%- for job in site.jobs %}
+      <div class="job">
+        <div class="job-date">{{ job.dateStart }} –<br>{{ job.dateEnd }}</div>
+        <div>
+          <div class="job-role">{{ job.role }}</div>
+          <div class="job-co">{{ job.company }}</div>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <!-- Wins -->
+  <section>
+    <div class="label">A few highlights</div>
+    <div class="wins">
+      {%- for win in site.wins %}
+      <div class="win"><strong>{{ win.highlight }}</strong> {{ win.description }}</div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <div class="label">What I work with</div>
+    <div class="tags">
+      {%- for skill in site.skills %}
+      <span class="tag{% if skill.category %} {{ skill.category }}{% endif %}">{{ skill.name }}</span>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer>
+    <div class="label">Get in touch</div>
+    <div class="links">
+      {%- for link in site.contact %}
+      <a class="link" href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>
+        <span class="link-key">{{ link.label }}</span>
+        <span class="link-val">{{ link.value }}</span>
+        <span class="arrow">→</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </footer>
+
+</div>

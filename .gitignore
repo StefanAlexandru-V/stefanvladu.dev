@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build output
+_site/
+
+# Environment variables
+.env
+.env.*
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Eleventy cache
+.cache/
+.11ty-cache/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Decap CMS local backend (if used)
+.netlify/

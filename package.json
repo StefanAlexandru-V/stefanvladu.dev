@@ -1,0 +1,26 @@
+{
+  "name": "stefanvladu.dev",
+  "version": "1.0.0",
+  "description": "Personal portfolio site for Ștefan-Alexandru Vladu",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanAlexandru-V/stefanvladu.dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/StefanAlexandru-V/stefanvladu.dev/issues"
+  },
+  "homepage": "https://github.com/StefanAlexandru-V/stefanvladu.dev#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
