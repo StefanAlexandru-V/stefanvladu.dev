@@ -2,6 +2,7 @@ backend:
   name: github
   repo: StefanAlexandru-V/stefanvladu.dev
   branch: master
+  site_domain: gleaming-zabaione-a4d6d6.netlify.app
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
