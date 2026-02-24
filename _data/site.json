@@ -5,7 +5,7 @@
       "first": "Ștefan-Alexandru",
       "last": "Vladu"
     },
-    "intro": "I build <strong>security automation platforms</strong> at Devoteam, and run <strong>Divine Solutions</strong> on the side. Before that I was CTO, then CEO, of a U.S. tech company. I've been writing code since 2019 and making decisions since 2023."
+    "intro": "Engineering leader who builds <strong>security platforms</strong> at Devoteam and runs <strong>Divine Solutions</strong> independently. Former CTO and CEO of a U.S. tech company. I ship products, scale teams, and automate everything I can."
   },
   "jobs": [
     {
@@ -29,7 +29,7 @@
     {
       "dateStart": "2023",
       "dateEnd": "Present",
-      "role": "Owner",
+      "role": "Founder",
       "company": "Divine Solutions"
     },
     {
@@ -47,45 +47,45 @@
   ],
   "wins": [
     {
-      "highlight": "40 → 120 live products in 3 months",
-      "description": "as CTO at Beep Media."
+      "highlight": "3× product catalog growth",
+      "description": "Scaled from 40 to 120 live products in 3 months as CTO."
     },
     {
-      "highlight": "75% faster dev cycles",
-      "description": "through infrastructure redesign and CI/CD improvements."
+      "highlight": "75% faster releases",
+      "description": "Redesigned infrastructure and CI/CD pipelines from scratch."
     },
     {
-      "highlight": "90% reduction in operational timelines",
-      "description": "as CEO through automation and process redesign."
+      "highlight": "90% ops time saved",
+      "description": "Built automation systems as CEO that eliminated manual workflows."
     },
     {
-      "highlight": "Enterprise DevSecOps platforms",
-      "description": "covering SAST, SCA, IaC and secrets detection across thousands of repos."
-    },
-    {
-      "highlight": "2nd place",
-      "description": "— self-built mental health platform, \"The Caring Bear.\""
+      "highlight": "Enterprise security at scale",
+      "description": "DevSecOps platforms protecting thousands of repositories."
     }
   ],
   "skills": [
     { "name": "Laravel", "category": "hi" },
     { "name": "PHP", "category": "hi" },
     { "name": "Node.js", "category": "hi" },
-    { "name": "Python / FastAPI", "category": "hi" },
+    { "name": "Python", "category": "hi" },
+    { "name": "FastAPI", "category": "hi" },
     { "name": "Vue.js", "category": "" },
-    { "name": "React / Next.js", "category": "" },
-    { "name": "MySQL · MariaDB", "category": "" },
-    { "name": "Docker · Kubernetes", "category": "lo" },
-    { "name": "AWS · GCP · Azure", "category": "lo" },
+    { "name": "React", "category": "" },
+    { "name": "Next.js", "category": "" },
+    { "name": "MySQL", "category": "" },
+    { "name": "Docker", "category": "lo" },
+    { "name": "Kubernetes", "category": "lo" },
+    { "name": "AWS", "category": "lo" },
+    { "name": "GCP", "category": "lo" },
     { "name": "Terraform", "category": "lo" },
     { "name": "CI/CD", "category": "lo" },
-    { "name": "Checkmarx · GitGuardian", "category": "" },
-    { "name": "ServiceNow", "category": "" },
-    { "name": "SAST · SCA · IaC", "category": "" },
-    { "name": "LangChain · OpenAI", "category": "" },
-    { "name": "LLaMA · Mistral", "category": "" },
+    { "name": "Checkmarx", "category": "" },
+    { "name": "GitGuardian", "category": "" },
+    { "name": "SAST / SCA", "category": "" },
+    { "name": "LangChain", "category": "" },
+    { "name": "OpenAI", "category": "" },
     { "name": "Elasticsearch", "category": "" },
-    { "name": "Grafana · Kibana", "category": "" }
+    { "name": "Grafana", "category": "" }
   ],
   "contact": [
     {
@@ -102,8 +102,8 @@
     },
     {
       "label": "GitHub",
-      "value": "github.com/yourhandle",
-      "url": "https://github.com/",
+      "value": "StefanAlexandru-V",
+      "url": "https://github.com/StefanAlexandru-V",
       "external": true
     }
   ]

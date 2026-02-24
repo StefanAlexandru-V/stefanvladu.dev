@@ -53,3 +53,4 @@ temp/
 
 # Decap CMS local backend (if used)
 .netlify/
+.gitnexus
