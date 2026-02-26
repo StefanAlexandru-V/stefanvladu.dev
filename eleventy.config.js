@@ -5,6 +5,9 @@ export default function(eleventyConfig) {
   // Pass through CNAME for GitHub Pages custom domain
   eleventyConfig.addPassthroughCopy("CNAME");
 
+  // Pass through profile photo
+  eleventyConfig.addPassthroughCopy("me.jpg");
+
   // Ignore AGENTS.md from template processing
   eleventyConfig.ignores.add("AGENTS.md");
 
