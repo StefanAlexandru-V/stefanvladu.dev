@@ -5,7 +5,6 @@ layout: layout.njk
 
   <!-- Hero Card -->
   <div class="card card-hero">
-    <div class="hero-eyebrow">Available for projects</div>
     <h1>{{ site.site.name.first }}<br><span>{{ site.site.name.last }}</span></h1>
     <p class="intro">{{ site.site.intro | safe }}</p>
   </div>
@@ -13,10 +12,10 @@ layout: layout.njk
   <!-- Profile Card -->
   <div class="card card-profile">
     <div class="avatar">
-      <img class="avatar-inner" src="/me.jpg" alt="Ștefan-Alexandru Vladu">
+      <img class="avatar-inner" src="/me.jpg" alt="Ștefan-Alexandru Vladu" loading="lazy">
     </div>
     <div class="profile-name">{{ site.site.name.first }}</div>
-    <div class="profile-title">DevSecOps · Builder · Leader</div>
+    <div class="profile-title">{{ site.site.profileTitle }}</div>
     <div class="availability">
       <span class="availability-dot"></span>
       Open to opportunities
@@ -26,50 +25,33 @@ layout: layout.njk
   <!-- Currently Card -->
   <div class="card card-third">
     <div class="label">Currently</div>
+    {%- for item in site.currently %}
     <div class="currently-item">
-      <div class="currently-icon">
+      <div class="currently-icon {{ item.color if item.color !== 'accent' else '' }}">
+        {% if item.label == "Building" %}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
         </svg>
-      </div>
-      <div>
-        <div class="currently-label">Building</div>
-        <div class="currently-value">Security platforms @ Devoteam</div>
-      </div>
-    </div>
-    <div class="currently-item">
-      <div class="currently-icon blue">
+        {% elif item.label == "Reading" %}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
         </svg>
-      </div>
-      <div>
-        <div class="currently-label">Reading</div>
-        <div class="currently-value">The Staff Engineer's Path</div>
-      </div>
-    </div>
-    <div class="currently-item">
-      <div class="currently-icon green">
+        {% elif item.label == "Playing" %}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z" />
         </svg>
-      </div>
-      <div>
-        <div class="currently-label">Playing</div>
-        <div class="currently-value">The Talos Principle</div>
-      </div>
-    </div>
-    <div class="currently-item">
-      <div class="currently-icon purple">
+        {% else %}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
         </svg>
+        {% endif %}
       </div>
       <div>
-        <div class="currently-label">Exploring</div>
-        <div class="currently-value">AI agents & LangGraph</div>
+        <div class="currently-label">{{ item.label }}</div>
+        <div class="currently-value">{{ item.value }}</div>
       </div>
     </div>
+    {%- endfor %}
   </div>
 
   <!-- Experience Card -->
@@ -82,6 +64,7 @@ layout: layout.njk
         <div>
           <div class="job-role">{{ job.role }}</div>
           <div class="job-co">{{ job.company }}</div>
+          {% if job.description %}<div class="job-desc">{{ job.description }}</div>{% endif %}
         </div>
       </div>
       {%- endfor %}
@@ -148,7 +131,9 @@ layout: layout.njk
 
   <!-- Footer -->
   <div class="footer-note">
-    Built with <a href="https://11ty.dev" target="_blank">Eleventy</a> · Styled with glassmorphism · Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+    <span>© 2026 Ștefan-Alexandru Vladu</span>
+    <span class="footer-sep">·</span>
+    <span>Built with <a href="https://11ty.dev" target="_blank" rel="noopener">Eleventy</a> &amp; hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></span>
   </div>
 
 </div>
