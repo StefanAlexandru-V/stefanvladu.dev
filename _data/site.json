@@ -1,48 +1,78 @@
 {
   "site": {
     "title": "Ștefan-Alexandru Vladu",
+    "description": "Engineering leader building security platforms at Devoteam and running Divine Solutions independently. Former CTO and CEO. I ship products, scale teams, and automate everything I can.",
     "name": {
       "first": "Ștefan-Alexandru",
       "last": "Vladu"
     },
-    "intro": "Engineering leader who builds <strong>security platforms</strong> at Devoteam and runs <strong>Divine Solutions</strong> independently. Former CTO and CEO of a U.S. tech company. I ship products, scale teams, and automate everything I can."
+    "intro": "Engineering leader who builds <strong>security platforms</strong> at Devoteam and runs <strong>Divine Solutions</strong> independently. Former CTO and CEO of a U.S. tech company. I ship products, scale teams, and automate everything I can.",
+    "profileTitle": "DevSecOps · Builder · Leader"
   },
+  "currently": [
+    {
+      "label": "Building",
+      "value": "Security platforms @ Devoteam",
+      "color": "accent"
+    },
+    {
+      "label": "Reading",
+      "value": "The Staff Engineer's Path",
+      "color": "blue"
+    },
+    {
+      "label": "Playing",
+      "value": "The Talos Principle",
+      "color": "green"
+    },
+    {
+      "label": "Exploring",
+      "value": "AI agents & LangGraph",
+      "color": "purple"
+    }
+  ],
   "jobs": [
     {
       "dateStart": "2023",
       "dateEnd": "Present",
       "role": "DevSecOps Engineer & Product Owner",
-      "company": "Devoteam"
+      "company": "Devoteam",
+      "description": "Building security platforms that protect thousands of repositories across enterprise clients, owning product roadmap and stakeholder delivery."
     },
     {
       "dateStart": "2024",
       "dateEnd": "2025",
       "role": "Chief Executive Officer",
-      "company": "Beep Media · United States"
+      "company": "Beep Media · United States",
+      "description": "Led the company post-CTO role; built automation systems that eliminated manual workflows and cut ops overhead by 90%."
     },
     {
       "dateStart": "2023",
       "dateEnd": "2024",
       "role": "Chief Technology Officer",
-      "company": "Beep Media · United States"
+      "company": "Beep Media · United States",
+      "description": "Scaled the product catalog from 40 to 120 live products in 3 months; redesigned infrastructure and CI/CD pipelines for 75% faster releases."
     },
     {
       "dateStart": "2023",
       "dateEnd": "Present",
       "role": "Founder",
-      "company": "Divine Solutions"
+      "company": "Divine Solutions",
+      "description": "Independent consultancy delivering full-stack and DevSecOps solutions for clients across Europe and the US."
     },
     {
       "dateStart": "2020",
       "dateEnd": "2023",
       "role": "Fullstack Developer",
-      "company": "Neurony · Orange · Hasna"
+      "company": "Neurony · Orange · Hasna",
+      "description": "Delivered web applications across three companies using Laravel, Vue.js, and React; collaborated on large-scale telecom projects at Orange."
     },
     {
       "dateStart": "2019",
       "dateEnd": "2020",
       "role": "Support Engineer",
-      "company": "Stefanini"
+      "company": "Stefanini",
+      "description": "Provided technical support and incident resolution for enterprise clients, developing strong diagnostics and communication skills."
     }
   ],
   "wins": [

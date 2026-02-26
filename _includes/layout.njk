@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ site.site.title }}</title>
+  <meta name="description" content="{{ site.site.description }}" />
+  <meta property="og:title" content="{{ site.site.title }}" />
+  <meta property="og:description" content="{{ site.site.description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stefanvladu.dev" />
+  <meta property="og:image" content="https://stefanvladu.dev/me.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ site.site.title }}" />
+  <meta name="twitter:description" content="{{ site.site.description }}" />
+  <meta name="twitter:image" content="https://stefanvladu.dev/me.jpg" />
+  <link rel="icon" type="image/jpeg" href="/me.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
@@ -238,6 +249,38 @@
     [data-theme="dark"] .sun-icon { display: block; }
     [data-theme="dark"] .moon-icon { display: none; }
 
+    /* Palette toggle button (touch devices only) */
+    .palette-toggle {
+      position: fixed;
+      top: 80px;
+      right: 24px;
+      z-index: 100;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow);
+    }
+
+    .palette-toggle svg {
+      width: 22px;
+      height: 22px;
+      color: var(--muted);
+      transition: color 0.3s ease;
+    }
+
+    @media (hover: none) {
+      .palette-toggle { display: flex; }
+    }
+
     /* Accent color picker */
     .accent-picker {
       position: fixed;
@@ -282,6 +325,21 @@
     .accent-btn[data-accent="purple"] { background: #8B5CF6; }
     .accent-btn[data-accent="green"] { background: #4A9B6D; }
     .accent-btn[data-accent="pink"] { background: #E879A9; }
+
+    /* Mobile: accent picker appears below palette button */
+    @media (hover: none) {
+      .accent-picker {
+        top: 136px;
+        right: 24px;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateX(10px);
+      }
+      .accent-picker.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
     /* Bento Grid Layout */
     .bento {
@@ -572,6 +630,13 @@
       color: var(--muted);
     }
 
+    .job-desc {
+      font-size: 0.82rem;
+      color: var(--dim);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
     /* Wins */
     .wins { display: flex; flex-direction: column; gap: 14px; }
     
@@ -744,19 +809,19 @@
 
     .footer-note a:hover { color: var(--accent); }
 
+    .footer-sep {
+      margin: 0 8px;
+      opacity: 0.4;
+    }
+
     /* Animations */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px) scale(0.98); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    @keyframes bounceHero {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-10px) scale(1.005); }
-    }
-
     .card { animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; }
-    .card-hero { animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards, bounceHero 3s ease-in-out 1.2s infinite; }
+    .card-hero { animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
     .card:nth-child(1) { animation-delay: 0s; }
     .card:nth-child(2) { animation-delay: 0.08s; }
     .card:nth-child(3) { animation-delay: 0.16s; }
@@ -769,12 +834,16 @@
     @media (max-width: 900px) {
       .card-hero { grid-column: span 12; }
       .card-profile { grid-column: span 12; padding: 36px; }
-      .card-half { grid-column: span 12; }
       .card-third { grid-column: span 12; }
       .card-two-thirds { grid-column: span 12; }
       .card-small { grid-column: span 6; }
     }
-    
+
+    /* Tablet: keep highlights + skills side-by-side */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .card-half { grid-column: span 6; }
+    }
+
     @media (max-width: 600px) {
       body { padding: 16px; }
       .bento { gap: 12px; }
@@ -785,7 +854,17 @@
       .job { grid-template-columns: 1fr; gap: 6px; }
       .job-date { padding-top: 0; }
       .card-small { grid-column: span 12; }
+      .card-half { grid-column: span 12; }
       .gradient-blob { opacity: 0.4; }
+    }
+
+    /* Accessibility: respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
     /* Accent color variations */
@@ -832,6 +911,13 @@
     </svg>
   </button>
 
+  <!-- Palette toggle (touch devices only) -->
+  <button class="palette-toggle" id="palette-toggle" aria-label="Choose accent color">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+    </svg>
+  </button>
+
   <!-- Accent color picker -->
   <div class="accent-picker" id="accent-picker">
     <button class="accent-btn active" data-accent="coral" aria-label="Coral accent"></button>
@@ -874,17 +960,40 @@
       localStorage.setItem('theme', next);
     });
 
-    // Show accent picker on theme toggle hover
-    toggle.addEventListener('mouseenter', () => accentPicker.classList.add('visible'));
-    accentPicker.addEventListener('mouseenter', () => accentPicker.classList.add('visible'));
-    accentPicker.addEventListener('mouseleave', () => accentPicker.classList.remove('visible'));
-    toggle.addEventListener('mouseleave', (e) => {
-      setTimeout(() => {
-        if (!accentPicker.matches(':hover')) {
+    // Show accent picker on hover (desktop) or tap (touch)
+    const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
+
+    toggle.addEventListener('mouseenter', () => {
+      if (!isTouchDevice()) accentPicker.classList.add('visible');
+    });
+    accentPicker.addEventListener('mouseenter', () => {
+      if (!isTouchDevice()) accentPicker.classList.add('visible');
+    });
+    accentPicker.addEventListener('mouseleave', () => {
+      if (!isTouchDevice()) accentPicker.classList.remove('visible');
+    });
+    toggle.addEventListener('mouseleave', () => {
+      if (!isTouchDevice()) {
+        setTimeout(() => {
+          if (!accentPicker.matches(':hover')) {
+            accentPicker.classList.remove('visible');
+          }
+        }, 100);
+      }
+    });
+    // Palette button tap for touch devices
+    const paletteBtn = document.getElementById('palette-toggle');
+    if (paletteBtn) {
+      paletteBtn.addEventListener('click', () => {
+        accentPicker.classList.toggle('visible');
+      });
+      // Close picker when tapping outside
+      document.addEventListener('click', (e) => {
+        if (!paletteBtn.contains(e.target) && !accentPicker.contains(e.target)) {
           accentPicker.classList.remove('visible');
         }
-      }, 100);
-    });
+      });
+    }
 
     // Accent color picker
     document.querySelectorAll('.accent-btn').forEach(btn => {
